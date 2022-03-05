@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: mymove 5s infinite;
+  
+  
+  
+}
+
+@keyframes mymove {
+  from {left: 0px;}
+  to {left: 1000px;}
+}
+nav{
+  border: black solid 3px;
+  width: 1100px;
+  height: 120px;
+  padding: 15px;
+  margin: auto;
+}
+button{
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  color: white;
+  background-color: black;
+  margin-bottom: 100px;
+  font-size: 18px;
+  
+  
+}
+</style>
+</head>
+<body>
+
+<h1 style="color: rgb(28, 39, 196);  text-shadow: 2px 2px 2px rgb(19, 169, 228);">Each button simultaneously changes the color, speed, And background color.</h1>
+<button onclick="myFunction1()">First</button>
+
+<script>
+function myFunction1() {
+  document.getElementById("myDIV").style.animationDuration = "15s";
+  document.getElementById("myDIV").style.backgroundColor= "blue";
+  document.getElementById("myNAV").style.backgroundColor= "gray";
+
+  $(this).css({"backgroundColor" : "blue"});
+}
+</script>
+<button onclick="myFunction2()">Second</button>
+
+<script>
+function myFunction2() {
+  document.getElementById("myDIV").style.animationDuration = "7s";
+  document.getElementById("myDIV").style.backgroundColor= "Yellow";
+  document.getElementById("myNAV").style.backgroundColor= "black";
+}
+</script>
+<button onclick="myFunction3()">Third</button>
+
+<script>
+function myFunction3() {
+  document.getElementById("myDIV").style.animationDuration = "1s";
+  document.getElementById("myDIV").style.backgroundColor= "red";
+  document.getElementById("myNAV").style.backgroundColor= "yellow";
+}
+</script>
+
+<nav id="myNAV">
+<div id="myDIV"></div>
+</nav>
+</body>
+</html>
