@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep Rotating</title>
+    <style>
+        body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f1f5b8;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.letter {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  font-size:200px;
+  text-shadow: 15px 25px 15px  rgb(37, 37, 43);
+   -webkit-text-stroke: 1px rgb(247, 240, 240);
+   font-weight: bold;
+}
+.letter:first-child {
+  color: red;
+  animation: loader 2s infinite;
+}
+.letter:nth-child(2) {
+ color: green;
+  animation: loader 3s infinite;
+}
+.letter:nth-child(3) {
+  color: rgb(181, 43, 199);
+  animation: loader 4s infinite;
+}
+.letter:nth-child(4) {
+  color: rgb(82, 5, 5);
+  animation: loader 4s infinite;
+}
+.letter:nth-child(5) {
+  color: rgb(32, 17, 175);
+  animation: loader 4s infinite;
+}
+.letter:nth-child(6) {
+  color: rgb(29, 185, 233);
+  animation: loader 4s infinite;
+}
+.letter:nth-child(7) {
+  color: rgb(41, 128, 241);
+  animation: loader 4s infinite;
+}
+.letter:last-child {
+  color: orangered;
+  animation: loader 5s infinite;
+}
+
+@keyframes loader {
+  0% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: y 90deg;
+    scale: 0.5;
+  }
+  50% {
+    rotate: 45deg;
+  }
+  75% {
+    rotate: x 45deg;
+    
+  }
+  100% {
+    rotate: 45deg;
+  }
+}
+
+@supports not (rotate: 0deg) {
+  @keyframes loader {
+    100% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: scale(0.5) rotateY(45deg);
+    }
+    100% {
+      transfrom: rotate(45deg);
+    }
+    100% {
+      transform: rotateX(45deg);
+      border-radius: 50%;
+    }
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="letter">A</div>
+        <div class="letter">C  </div>
+        <div class="letter" >T  </div>
+         <div class="letter">I</div>
+            <div class="letter">V </div>
+          <div class="letter">I </div>
+          <div class="letter" >T  </div>
+          <div class="letter">Y </div>
+        </div>
+</body>
+</html>
